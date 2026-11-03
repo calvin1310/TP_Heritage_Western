@@ -13,6 +13,7 @@ public:
 	string getEtat()const{ return etat;}
 	void sePresente()const;
 	void changeDeRobe(const string couleurRobe);
+	void seFaitKidnapper();
 private:
 	string couleurRobe;
 	string etat;
