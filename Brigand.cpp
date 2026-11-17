@@ -1,15 +1,14 @@
 #include <iostream>
 using namespace std;
 #include "Brigand.h"
-#include "Dame.h" // nécessaire pour accéder à la déclaration de la classe Dame
-#include "Cowboy.h" // nécessaire pour accéder à la déclaration de la classe Cowboy
-// Constructeurs et Destructeur
+#include "Dame.h" 
+#include "Cowboy.h"
 Brigand::Brigand(const string nom/*=""*/, const string boissonFavorite/*="tord-boyaux"*/,
-	const string comportement/*="méchant"*/) : Humain(nom, boissonFavorite), comportement(
+	const string comportement/*="mÃ©chant"*/) : Humain(nom, boissonFavorite), comportement(
 		comportement), nbDamesEnlevees(0), recompense(0), enPrison(false)
 {
 }
-// Accesseurs
+
 string Brigand::getComportement() const
 {
 	return comportement;
@@ -21,12 +20,11 @@ int Brigand::getNbDamesEnlevees() const
 int Brigand::getRecompense() const{
 return recompense;
 }
-// Services
+
 void Brigand::sePresente() const
 {
 	cout << "(" << nom << ") -- " << "Bonjour, je suis " << getNom() << " le " <<
-		getComportement() << " et j’aime le " << getBoissonFavorite() << "." << endl;
-	// TODO : présentation détaillée
+		getComportement() << " et jâ€™aime le " << getBoissonFavorite() << "." << endl;
 }
 void Brigand::kidnappe(Dame& dame)
 {
@@ -35,7 +33,7 @@ void Brigand::kidnappe(Dame& dame)
 		dame.seFaitKidnapper();
 		nbDamesEnlevees++;
 		augmenteRecompense();
-		cout << "(" << nom << ") -- " << "Ah ah ! " << dame.getNom() << ", tu es mienne désormais !" << endl;
+		cout << "(" << nom << ") -- " << "Ah ah ! " << dame.getNom() << ", tu es mienne dÃ©sormais !" << endl;
 	}
 }
 
@@ -64,7 +62,7 @@ bool Brigand::estEnPrison() const
 }
 
 void Brigand::nbDames() {
-	cout << "(" << nom << ") -- " << "J'ai l'air méchant et j'ai deja kidnappe " << getNbDamesEnlevees() << " dames" << endl;
+	cout << "(" << nom << ") -- " << "J'ai l'air mÃ©chant et j'ai deja kidnappe " << getNbDamesEnlevees() << " dames" << endl;
 }
 
 void Brigand::prix() {
