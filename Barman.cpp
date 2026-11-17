@@ -13,7 +13,7 @@ Barman::Barman(const string nom, const string boissonFavorite, const string nomB
 void Barman::sePresente() const
 {
 	cout << "(" << nom << ") -- " << "Bonjour, je suis " << getNom() << " le barman du " <<
-		getNomBar() << "et j’aime le " << getBoissonFavorite() << terminePhrase() << endl;
+		getNomBar() << " et j’aime le " << getBoissonFavorite() << terminePhrase() << endl;
 }
 
 void Barman::sert(const Humain& client)

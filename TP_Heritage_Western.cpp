@@ -3,6 +3,7 @@
 #include "Cowboy.h"
 #include "Brigand.h"
 #include "Barman.h"
+#include "Sherif.h"
 #include <string>
 #include <iostream>
 using namespace std;
@@ -49,7 +50,7 @@ int main()
 	joe.seFaitEmprisonne(lucky);
 	lucky.libere(jenny);*/
 
-	cout << "Question 4\n";
+	/*cout << "Question 4\n";
 	Cowboy lucky("Lucky Luke", "coсa-cola");
 	Dame jenny("Jenny");
 	Brigand joe("Joe");
@@ -60,5 +61,21 @@ int main()
 	presentezVous(robert);
 	robert.sert(lucky);
 	robert.sert(jenny);
-	robert.sert(joe);
+	robert.sert(joe);*/
+
+	cout << "Question 5\n";
+	Cowboy lucky("Lucky Luke", "coсa-cola");
+	Dame jenny("Jenny");
+	Brigand joe("Joe");
+	Barman robert("Robert");
+	Sherif clint("Clint");
+	presentezVous(lucky);
+	presentezVous(jenny);
+	presentezVous(joe);
+	presentezVous(robert);
+	presentezVous(clint);
+	joe.augmenteRecompense();
+	clint.cherche(joe);
+	clint.coffre(joe);
+	presentezVous(clint);
 }
