@@ -26,11 +26,12 @@ void Cowboy::tire(Brigand& brigand) {
     else {
         cout << "** Le " << adjectif << " " << nom << " tire sur " << brigand.getNom() << endl;
         arme->tire();
-        cout << "(" << nom << ") -- Prends ça, rascal !" << endl;
+        cout << "(" << nom << ") -- Prends Ã§a, rascal !" << endl;
     }
 }
 
 Cowboy::~Cowboy(){
+    cout << "*** " << getNom() << "est mort !!" << endl;
     if (arme != NULL) delete arme;
 }
 
