@@ -4,6 +4,7 @@
 #include "humain.h"
 class Brigand;
 class Dame;
+class Arme;
 class Cowboy : public Humain
 {
 public:
@@ -14,9 +15,12 @@ public:
     void sePresente() const;
     void tire(Brigand& brigand);
     void libere(Dame& dame);
+    ~Cowboy();
+    void setArme(Arme* arme);
 private:
     int popularite;
     string adjectif;
+    Arme* arme;
 };
 #endif
 

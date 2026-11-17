@@ -6,6 +6,7 @@
 using namespace std;
 class Dame; 
 class Cowboy;
+class Arme;
 class Brigand : public Humain
 {
 public:
@@ -22,11 +23,15 @@ public:
 	bool estEnPrison()const;
 	void prix();
 	void nbDames();
+	~Brigand();
+	void setArme(Arme* arme);
+	void tire(Cowboy& cowboy);
 private:
 	string comportement;
 	int nbDamesEnlevees;
 	int recompense;
 	bool enPrison;
+	Arme* arme;
 };
 #endif
 

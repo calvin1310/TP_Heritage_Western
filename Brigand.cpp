@@ -3,9 +3,11 @@ using namespace std;
 #include "Brigand.h"
 #include "Dame.h" 
 #include "Cowboy.h"
+#include "Arme.h"
+
 Brigand::Brigand(const string nom/*=""*/, const string boissonFavorite/*="tord-boyaux"*/,
 	const string comportement/*="méchant"*/) : Humain(nom, boissonFavorite), comportement(
-		comportement), nbDamesEnlevees(0), recompense(0), enPrison(false)
+		comportement), nbDamesEnlevees(0), recompense(0), enPrison(false), arme(NULL)
 {
 }
 
@@ -67,4 +69,26 @@ void Brigand::nbDames() {
 
 void Brigand::prix() {
 	cout << "(" << nom << ") -- " << "Ma tete est mise a prix " << getRecompense() <<"$" << endl;
+}
+
+void Brigand::tire(Cowboy& cowboy) {
+	if (arme == NULL) {
+		cout << "(" << nom << ") -- Je n'ai pas d'arme !" << endl;
+	}
+	else if (arme->getNbBalles() == 0) {
+		cout << "** Clic ! Le " << comportement << " " << nom << " n'a plus de balles" << endl;
+	}
+	else {
+		cout << "** Le " << comportement << " " << nom << " tire sur " << cowboy.getNom() << endl;
+		arme->tire();
+		cout << "(" << nom << ") -- Tu ne m'auras pas, cowboy !" << endl;
+	}
+}
+
+Brigand::~Brigand(){
+	if (arme != NULL) delete arme;
+}
+
+void Brigand::setArme(Arme* arme){
+	this->arme = arme;
 }

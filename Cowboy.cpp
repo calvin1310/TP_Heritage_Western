@@ -2,8 +2,9 @@
 #include "Cowboy.h"
 #include "Dame.h"
 #include "Brigand.h"
+#include "Arme.h"
 
-Cowboy::Cowboy(const string nom, const string boissonFavorite, const string adjectif) : Humain(nom, boissonFavorite), popularite(0), adjectif(adjectif){
+Cowboy::Cowboy(const string nom, const string boissonFavorite, const string adjectif) : Humain(nom, boissonFavorite), popularite(0), adjectif(adjectif), arme(NULL){
 }
 
 void Cowboy::sePresente() const {
@@ -16,7 +17,23 @@ void Cowboy::libere(Dame& dame) {
 }
 
 void Cowboy::tire(Brigand& brigand) {
-    cout << "** Le " << getAdjectif() << nom << " tire sur " << brigand.getNom() << endl;
-    cout << "(" << nom << ") -- " << "Prends ça, rascal !" << endl;
+    if (arme == NULL) {
+        cout << "(" << nom << ") -- Je n'ai pas d'arme !" << endl;
+    }
+    else if (arme->getNbBalles() == 0) {
+        cout << "** Clic ! Le " << adjectif << " " << nom << " n'a plus de balles" << endl;
+    }
+    else {
+        cout << "** Le " << adjectif << " " << nom << " tire sur " << brigand.getNom() << endl;
+        arme->tire();
+        cout << "(" << nom << ") -- Prends ça, rascal !" << endl;
+    }
+}
 
+Cowboy::~Cowboy(){
+    if (arme != NULL) delete arme;
+}
+
+void Cowboy::setArme(Arme* arme){
+    this->arme = arme;
 }

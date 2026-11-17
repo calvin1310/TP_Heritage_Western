@@ -4,6 +4,7 @@
 #include "Brigand.h"
 #include "Barman.h"
 #include "Sherif.h"
+#include "Arme.h"
 #include <string>
 #include <iostream>
 using namespace std;
@@ -63,7 +64,7 @@ int main()
 	robert.sert(jenny);
 	robert.sert(joe);*/
 
-	cout << "Question 5\n";
+	/*cout << "Question 5\n";
 	Cowboy lucky("Lucky Luke", "coсa-cola");
 	Dame jenny("Jenny");
 	Brigand joe("Joe");
@@ -77,5 +78,36 @@ int main()
 	joe.augmenteRecompense();
 	clint.cherche(joe);
 	clint.coffre(joe);
+	presentezVous(clint);*/
+
+	cout << "Question 6\n";
+	Cowboy lucky("Lucky Luke", "coca-cola");
+	Dame jenny("Jenny");
+	Brigand joe("Joe");
+	Sherif clint("Clint");
+	Arme* colt = new Arme("Colt", 150, 6, 2);
+	lucky.setArme(colt);
+	joe.setArme(new Arme("Smith & Wesson", 100, 6, 2));
+	clint.setArme(new Arme("Glock", 200, 6, 6));
+
+	presentezVous(lucky);
+	presentezVous(jenny);
+	presentezVous(joe);
 	presentezVous(clint);
+
+	joe.kidnappe(jenny);
+	clint.cherche(joe);
+
+	cout << endl << "--- Le duel ---" << endl;
+	lucky.tire(joe);
+	joe.tire(lucky);
+	lucky.tire(joe);
+	lucky.tire(joe);
+	colt->recharge(6);
+	lucky.tire(joe);
+
+	clint.coffre(joe);
+	lucky.libere(jenny);
+
+	clint.sePresente();
 }
