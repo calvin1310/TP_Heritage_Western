@@ -81,16 +81,16 @@ int main()
 	presentezVous(clint);*/
 
 	cout << "Question 6\n";
-	Cowboy lucky("Lucky Luke", "coca-cola");
+	Cowboy* lucky = new Cowboy("Lucky Luke", "coca-cola");
 	Dame jenny("Jenny");
 	Brigand joe("Joe");
 	Sherif clint("Clint");
 	Arme* colt = new Arme("Colt", 150, 6, 2);
-	lucky.setArme(colt);
+	lucky->setArme(colt);
 	joe.setArme(new Arme("Smith & Wesson", 100, 6, 2));
 	clint.setArme(new Arme("Glock", 200, 6, 6));
 
-	presentezVous(lucky);
+	presentezVous(*lucky);
 	presentezVous(jenny);
 	presentezVous(joe);
 	presentezVous(clint);
@@ -99,18 +99,17 @@ int main()
 	clint.cherche(joe);
 
 	cout << endl << "--- Le duel ---" << endl;
-	lucky.tire(joe);
-	joe.tire(lucky);
-	lucky.tire(joe);
-	lucky.tire(joe);
+	lucky->tire(joe);
+	joe.tire(*lucky);
+	lucky->tire(joe);
+	lucky->tire(joe);
 	colt->recharge(6);
-	lucky.tire(joe);
-	joe.tire(lucky);
-
-	delete lucky;
+	lucky->tire(joe);
+	joe.tire(*lucky);
 
 	clint.coffre(joe);
-	lucky.libere(jenny);
+	lucky->libere(jenny);
 
 	clint.sePresente();
+	delete lucky;
 }
