@@ -105,6 +105,9 @@ int main()
 	lucky.tire(joe);
 	colt->recharge(6);
 	lucky.tire(joe);
+	joe.tire(lucky);
+
+	delete lucky;
 
 	clint.coffre(joe);
 	lucky.libere(jenny);
