@@ -6,7 +6,7 @@ using namespace std;
 #include "Arme.h"
 
 Brigand::Brigand(const string nom/*=""*/, const string boissonFavorite/*="tord-boyaux"*/,
-	const string comportement/*="méchant"*/) : Humain(nom, boissonFavorite), comportement(
+	const string comportement/*="mÃ©chant"*/) : Humain(nom, boissonFavorite), comportement(
 		comportement), nbDamesEnlevees(0), recompense(0), enPrison(false), arme(NULL)
 {
 }
@@ -26,7 +26,7 @@ return recompense;
 void Brigand::sePresente() const
 {
 	cout << "(" << nom << ") -- " << "Bonjour, je suis " << getNom() << " le " <<
-		getComportement() << " et j’aime le " << getBoissonFavorite() << "." << endl;
+		getComportement() << " et jâ€™aime le " << getBoissonFavorite() << "." << endl;
 }
 void Brigand::kidnappe(Dame& dame)
 {
@@ -35,7 +35,7 @@ void Brigand::kidnappe(Dame& dame)
 		dame.seFaitKidnapper();
 		nbDamesEnlevees++;
 		augmenteRecompense();
-		cout << "(" << nom << ") -- " << "Ah ah ! " << dame.getNom() << ", tu es mienne désormais !" << endl;
+		cout << "(" << nom << ") -- " << "Ah ah ! " << dame.getNom() << ", tu es mienne dÃ©sormais !" << endl;
 	}
 }
 
@@ -64,7 +64,7 @@ bool Brigand::estEnPrison() const
 }
 
 void Brigand::nbDames() {
-	cout << "(" << nom << ") -- " << "J'ai l'air méchant et j'ai deja kidnappe " << getNbDamesEnlevees() << " dames" << endl;
+	cout << "(" << nom << ") -- " << "J'ai l'air mÃ©chant et j'ai deja kidnappe " << getNbDamesEnlevees() << " dames" << endl;
 }
 
 void Brigand::prix() {
@@ -86,6 +86,7 @@ void Brigand::tire(Cowboy& cowboy) {
 }
 
 Brigand::~Brigand(){
+	cout << "*** " << getNom() << " est mort !!" << endl;
 	if (arme != NULL) delete arme;
 }
 
