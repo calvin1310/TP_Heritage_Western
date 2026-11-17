@@ -15,6 +15,7 @@ public:
 	int getNbBalles() const { return nbBalles; }
 	void tire();
 	void recharge(int nbBalles);
+	~Arme();
 private:
 	string nom;
 	int capacite;
