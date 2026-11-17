@@ -21,3 +21,7 @@ void Arme::recharge(int nb){
 	}
 	cout << "*** " << nom << " est recharge de " << nb << " balles" << endl;
 }
+
+Arme::~Arme(){
+	cout << "*** "<< nom << " est detruit !!" << endl;
+}
