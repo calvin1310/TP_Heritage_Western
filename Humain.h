@@ -14,6 +14,7 @@ public:
 		virtual string getNom()const {return nom;}
 		virtual void sePresente()const;
 		void boit()const;
+		virtual ~Humain() {}
 protected:
 	string nom;
 	string boissonFavorite;

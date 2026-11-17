@@ -1,15 +1,14 @@
 #include <iostream>
 using namespace std;
 #include "Brigand.h"
-#include "Dame.h" // nécessaire pour accéder à la déclaration de la classe Dame
-#include "Cowboy.h" // nécessaire pour accéder à la déclaration de la classe Cowboy
-// Constructeurs et Destructeur
+#include "Dame.h" 
+#include "Cowboy.h"
 Brigand::Brigand(const string nom/*=""*/, const string boissonFavorite/*="tord-boyaux"*/,
 	const string comportement/*="méchant"*/) : Humain(nom, boissonFavorite), comportement(
 		comportement), nbDamesEnlevees(0), recompense(0), enPrison(false)
 {
 }
-// Accesseurs
+
 string Brigand::getComportement() const
 {
 	return comportement;
@@ -21,12 +20,11 @@ int Brigand::getNbDamesEnlevees() const
 int Brigand::getRecompense() const{
 return recompense;
 }
-// Services
+
 void Brigand::sePresente() const
 {
 	cout << "(" << nom << ") -- " << "Bonjour, je suis " << getNom() << " le " <<
 		getComportement() << " et j’aime le " << getBoissonFavorite() << "." << endl;
-	// TODO : présentation détaillée
 }
 void Brigand::kidnappe(Dame& dame)
 {

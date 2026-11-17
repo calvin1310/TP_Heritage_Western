@@ -4,8 +4,8 @@
 #include <string>
 #include "humain.h"
 using namespace std;
-class Dame; // nécessaire pour indiquer que Dame est une classe (1)
-class Cowboy; // nécessaire pour indiquer que Cowboy est une classe (2)
+class Dame; 
+class Cowboy;
 class Brigand : public Humain
 {
 public:

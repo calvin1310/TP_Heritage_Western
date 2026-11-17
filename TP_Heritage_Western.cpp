@@ -1,10 +1,16 @@
-//#include "Humain.h"
+﻿#include "Humain.h"
 #include "Dame.h"
 #include "Cowboy.h"
 #include "Brigand.h"
+#include "Barman.h"
 #include <string>
 #include <iostream>
 using namespace std;
+void presentezVous(const Humain &humain)
+{
+	humain.sePresente();
+}
+
 int main()
 {
 	/*cout << "Question 1\n";
@@ -27,7 +33,7 @@ int main()
 	lucky.boit();
 	jenny.boit();*/
 
-	cout << "Question 3\n";
+	/*cout << "Question 3\n";
 	Cowboy lucky("Lucky Luke", "coca-cola");
 	Dame jenny("Jenny");
 	Brigand joe("Joe");
@@ -41,5 +47,18 @@ int main()
 	joe.prix();
 	lucky.tire(joe);
 	joe.seFaitEmprisonne(lucky);
-	lucky.libere(jenny);
+	lucky.libere(jenny);*/
+
+	cout << "Question 4\n";
+	Cowboy lucky("Lucky Luke", "coсa-cola");
+	Dame jenny("Jenny");
+	Brigand joe("Joe");
+	Barman robert("Robert");
+	presentezVous(lucky);
+	presentezVous(jenny);
+	presentezVous(joe);
+	presentezVous(robert);
+	robert.sert(lucky);
+	robert.sert(jenny);
+	robert.sert(joe);
 }

@@ -3,7 +3,7 @@
 #include <iostream>
 using namespace std;
 
-Humain::Humain(const string nom, const string boissonFavorite/*="eau"*/)
+Humain::Humain(const string nom, const string boissonFavorite /*="eau"*/)
 	: nom(nom), boissonFavorite(boissonFavorite){
 }
 
